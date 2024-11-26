@@ -1,0 +1,25 @@
+SETUP:
+The following code should be added to a widget such as a dropdown, a radio button group, list box or switch.  
+
+The widget will need manual setup first with the relevant and matching selectedkeys e.g. (Group, Local, LFL)
+
+CODE:
+var selectedKey = drpCurrency.getSelectedKey();
+ 
+if (selectedKey) {
+    switch (selectedKey) {
+
+		case "Group": 
+			numTCCBase.getDataSource().setDimensionFilter(Alias.MeasureDimension,["48904484-1411-4924-3815-204492434276"]);
+			chtTrends.getDataSource().setDimensionFilter(Alias.MeasureDimension,["11641448-7830-4507-3602-226741052822","48904484-1411-4924-3815-204492434276","37808127-2758-4788-3506-262371741548"]);
+			tblCostCatComp.getDataSource().setDimensionFilter(Alias.MeasureDimension,["11641448-7830-4507-3602-226741052822","48904484-1411-4924-3815-204492434276","37808127-2758-4788-3506-262371741548"]);
+            break;	
+
+        case "Local":			
+			numTCCBase.getDataSource().setDimensionFilter(Alias.MeasureDimension,["25571597-6427-4828-3987-633998031634"]);
+			chtTrends.getDataSource().setDimensionFilter(Alias.MeasureDimension,["15083163-1797-4845-3222-243224287360","25571597-6427-4828-3987-633998031634","33926714-0416-4873-3265-530746679509"]);
+			tblCostCatComp.getDataSource().setDimensionFilter(Alias.MeasureDimension,["15083163-1797-4845-3222-243224287360","25571597-6427-4828-3987-633998031634","33926714-0416-4873-3265-530746679509"]);
+            break;
+    }
+ 
+}
